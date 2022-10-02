@@ -21,3 +21,25 @@ final RatingWidget ratingWidget = RatingWidget(
     color: Colors.grey,
   ),
 );
+const List<Map<String, String>> categoryImages = [
+  {
+    'title': 'living ',
+    'image': 'assets/images/mobiles.jpeg',
+  },
+  {
+    'title': 'bedroom',
+    'image': 'assets/images/essentials.jpeg',
+  },
+  {
+    'title': 'kitchen ',
+    'image': 'assets/images/appliances.jpeg',
+  },
+  {
+    'title': 'out door',
+    'image': 'assets/images/books.jpeg',
+  },
+  {
+    'title': 'bathroom',
+    'image': 'assets/images/fashion.jpeg',
+  },
+];
