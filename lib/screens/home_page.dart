@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants.dart';
+import 'package:prototype_flutter/widgets/top_categories.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -62,12 +61,53 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: screenHeight * 0.03,
+              height: screenHeight * 0.01,
+            ),
+            const TopCategories(),
+            SizedBox(
+              height: screenHeight * 0.02,
             ),
             Container(
-              color: Colors.red,
-              width: screenWidth * 0.8,
-              height: screenHeight * 0.15,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xFF00b09b),
+                    Color(0xFF96c93d),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(25),
+              ),
+              width: screenWidth * 0.9,
+              height: screenHeight * 0.1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text('Enjoy',
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.white)),
+                  Text(
+                    'Cashback 20%',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: screenHeight * 0.015,
+            ),
+            const Text(
+              "Top Products",
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.lightGreen),
             )
           ],
         ),
