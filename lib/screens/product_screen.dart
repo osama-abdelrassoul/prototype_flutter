@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_flutter/models/product.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../constants/constants.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+  const ProductScreen({Key? key, required this.product}) : super(key: key);
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +59,29 @@ class ProductScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(product.name),
+                  RatingBar(
+                    ratingWidget: ratingWidget,
+                    onRatingUpdate: (_) {},
+                    initialRating: 3.5,
+                    allowHalfRating: true,
+                    ignoreGestures: true,
+                    itemSize: 20,
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
