@@ -90,7 +90,7 @@ class ProductScreen extends StatelessWidget {
                 'Recommend for You',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              Container(
+              SizedBox(
                 height: screenWidth * 0.5,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,

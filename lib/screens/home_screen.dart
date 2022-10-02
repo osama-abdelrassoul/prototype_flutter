@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
-<<<<<<< HEAD
-import 'package:prototype_flutter/widgets/top_categories.dart';
-=======
 import 'package:prototype_flutter/screens/widgets/custom_app_bar.dart';
->>>>>>> 21c9b4cb0cd849b5e413e8e23864fab6dc6c1c0c
+
+import '../widgets/top_categories.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
