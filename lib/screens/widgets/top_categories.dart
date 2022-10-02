@@ -20,13 +20,11 @@ class TopCategories extends StatelessWidget {
                   width: screenWidth * 0.18,
                   height: screenHeight * 0.073,
                   padding: const EdgeInsets.only(left: 10),
-                  child: Flexible(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(screenHeight * 0.055),
-                      child: Image.asset(
-                        categoryImages[index]['image']!,
-                        fit: BoxFit.cover,
-                      ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(screenHeight * 0.055),
+                    child: Image.asset(
+                      categoryImages[index]['image']!,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
