@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
 
+// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   CustomAppBar({
     Key? key,
