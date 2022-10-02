@@ -9,7 +9,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
   Product(
@@ -20,7 +20,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
   Product(
@@ -31,7 +31,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
   Product(
@@ -42,7 +42,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
   Product(
@@ -53,7 +53,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
   Product(
@@ -64,7 +64,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
   Product(
@@ -75,7 +75,7 @@ const List<Product> kDummyProducts = [
     quantity: 10,
     category: 'chairs',
     image: 'https://pngimg.com/uploads/chair/chair_PNG6908.png',
-    id: '1',
+    id: 2,
     rating: 4.5,
   ),
 ];
