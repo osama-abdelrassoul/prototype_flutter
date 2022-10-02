@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MediaQuery(
       data: MediaQueryData(),
       child: MaterialApp(
-        home: SearchScreen(),
+        home: HomeScreen(),
       ),
     );
   }
