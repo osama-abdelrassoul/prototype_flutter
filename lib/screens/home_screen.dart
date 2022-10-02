@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
+<<<<<<< HEAD
 import 'package:prototype_flutter/widgets/top_categories.dart';
+=======
+import 'package:prototype_flutter/screens/widgets/custom_app_bar.dart';
+>>>>>>> 21c9b4cb0cd849b5e413e8e23864fab6dc6c1c0c
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,54 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(screenHeight * 0.07),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          title: Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.grey[100],
-                  ),
-                  width: screenWidth * 0.7,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.search, color: Colors.blueGrey),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SizedBox(
-                          width: screenWidth * 0.45,
-                          child: const TextField(
-                            decoration:
-                                InputDecoration(border: InputBorder.none),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                CircleAvatar(
-                    backgroundColor: Colors.grey[100],
-                    child: const Icon(Icons.shopping_cart,
-                        color: Colors.blueGrey)),
-                CircleAvatar(
-                    backgroundColor: Colors.grey[100],
-                    child:
-                        const Icon(Icons.notifications, color: Colors.blueGrey))
-              ],
-            ),
-          ),
-        ),
-      ),
+      appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
