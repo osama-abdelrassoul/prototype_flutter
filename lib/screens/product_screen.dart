@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:prototype_flutter/constants.dart';
-import 'package:prototype_flutter/widgets/top_categories.dart';
+import 'package:prototype_flutter/models/product.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+import '../constants/constants.dart';
+
+class ProductScreen extends StatelessWidget {
+  const ProductScreen({Key? key, required this.product}) : super(key: key);
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(screenHeight * 0.07),
         child: AppBar(
@@ -58,58 +60,26 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: screenHeight * 0.01,
-            ),
-            const TopCategories(),
-            SizedBox(
-              height: screenHeight * 0.02,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xFF00b09b),
-                    Color(0xFF96c93d),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              width: screenWidth * 0.9,
-              height: screenHeight * 0.1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  Text('Enjoy',
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white)),
-                  Text(
-                    'Cashback 20%',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(product.name),
+                  RatingBar(
+                    ratingWidget: ratingWidget,
+                    onRatingUpdate: (_) {},
+                    initialRating: 3.5,
+                    allowHalfRating: true,
+                    ignoreGestures: true,
+                    itemSize: 20,
                   )
                 ],
               ),
-            ),
-            SizedBox(
-              height: screenHeight * 0.015,
-            ),
-            const Text(
-              "Top Products",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.lightGreen),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
