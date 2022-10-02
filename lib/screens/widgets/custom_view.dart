@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
 import 'package:prototype_flutter/constants/dummy_data.dart';
 import 'package:prototype_flutter/screens/product_screen.dart';
