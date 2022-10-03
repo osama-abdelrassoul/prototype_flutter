@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: screenHeight * 0.6,
             width: double.infinity,
             child: map == null
-                ? CircularProgressIndicator()
+                ? const CircularProgressIndicator()
                 : CustomView(response: map),
           )
         ],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
 import 'package:prototype_flutter/networking/netwroking.dart';
-import 'package:prototype_flutter/screens/search_screen.dart';
 
 class CustomAppBar extends StatefulWidget with PreferredSizeWidget {
   CustomAppBar({

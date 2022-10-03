@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:prototype_flutter/constants/constants.dart';
-import 'package:prototype_flutter/constants/dummy_data.dart';
 import 'package:prototype_flutter/screens/product_screen.dart';
 
 import '../../models/product.dart';
@@ -26,7 +23,6 @@ class CustomView extends StatelessWidget {
       itemCount: response['items'].length,
       itemBuilder: (context, index) {
         Product product = Product.fromMap(response['items'][index]);
-        print(product);
 
         return GestureDetector(
           onTap: () {

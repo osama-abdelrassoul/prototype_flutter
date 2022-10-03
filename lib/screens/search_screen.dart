@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/screens/widgets/custom_app_bar.dart';
@@ -33,9 +32,9 @@ class _SearchScreenState extends State<SearchScreen> {
         callback: updateResponse,
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: map == null
-            ? CircularProgressIndicator()
+            ? const CircularProgressIndicator()
             : CustomView(
                 response: map,
               ),
