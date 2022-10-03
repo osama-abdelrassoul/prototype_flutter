@@ -8,7 +8,7 @@ import 'package:prototype_flutter/screens/widgets/top_categories.dart';
 import 'package:prototype_flutter/networking/netwroking.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
