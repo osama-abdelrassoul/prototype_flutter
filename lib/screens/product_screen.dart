@@ -26,14 +26,14 @@ class ProductScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    product.name,
+                    product.title,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
-                    product.category,
+                    product.category.toString(),
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
@@ -47,7 +47,7 @@ class ProductScreen extends StatelessWidget {
                 width: screenWidth,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(product.image),
+                    image: NetworkImage(product.imageURL),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -107,14 +107,14 @@ class ProductScreen extends StatelessWidget {
                               image: DecorationImage(
                                 fit: BoxFit.scaleDown,
                                 image: NetworkImage(
-                                  kDummyProducts[index].image,
+                                  kDummyProducts[index].imageURL,
                                 ),
                               ),
                             ),
                           ),
                           Row(
                             children: [
-                              Text(kDummyProducts[index].name),
+                              Text(kDummyProducts[index].title),
                               const SizedBox(
                                 width: 10,
                               ),

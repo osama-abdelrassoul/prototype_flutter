@@ -1,26 +1,39 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
 import 'package:prototype_flutter/screens/widgets/custom_app_bar.dart';
 import 'package:prototype_flutter/screens/widgets/custom_view.dart';
 import 'package:prototype_flutter/screens/widgets/top_categories.dart';
+import 'package:prototype_flutter/networking/netwroking.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  Map? map;
+
+  getData() async {
+    String response = await Networking().getData();
+    map = json.decode(response);
+    setState(() {});
+    return map;
+  }
 
   @override
   Widget build(BuildContext context) {
+    getData();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomAppBar(),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            height: screenHeight * 0.01,
-          ),
           const TopCategories(),
-          SizedBox(
-            height: screenHeight * 0.02,
-          ),
           Container(
             decoration: BoxDecoration(
               gradient: const LinearGradient(
@@ -53,9 +66,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: screenHeight * 0.015,
-          ),
           const Text(
             "Top Products",
             style: TextStyle(
@@ -66,7 +76,9 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: screenHeight * 0.6,
             width: double.infinity,
-            child: const CustomView(),
+            child: map == null
+                ? CircularProgressIndicator()
+                : CustomView(response: map),
           )
         ],
       ),

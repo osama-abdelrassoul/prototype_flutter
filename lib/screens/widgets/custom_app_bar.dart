@@ -1,25 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_flutter/constants/constants.dart';
+import 'package:prototype_flutter/networking/netwroking.dart';
+import 'package:prototype_flutter/screens/search_screen.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatefulWidget with PreferredSizeWidget {
   CustomAppBar({
     Key? key,
     this.hasBackButton = false,
+    this.callback,
   }) : super(key: key);
   final bool hasBackButton;
+  Function? callback;
 
   @override
   Size preferredSize = Size.fromHeight(screenHeight * 0.07);
 
   @override
+  State<CustomAppBar> createState() => _CustomAppBarState();
+}
+
+class _CustomAppBarState extends State<CustomAppBar> {
+  late TextEditingController controller;
+
+  @override
+  void initState() {
+    controller = TextEditingController();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      preferredSize: preferredSize,
+      preferredSize: widget.preferredSize,
       child: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: hasBackButton
+        leading: widget.hasBackButton
             ? IconButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -40,7 +57,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.grey[100],
                 ),
-                width: hasBackButton ? screenWidth * 0.55 : screenWidth * 0.7,
+                width: widget.hasBackButton
+                    ? screenWidth * 0.55
+                    : screenWidth * 0.7,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Row(
@@ -50,11 +69,15 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                         width: 10,
                       ),
                       SizedBox(
-                        width: hasBackButton
+                        width: widget.hasBackButton
                             ? screenWidth * 0.25
                             : screenWidth * 0.45,
-                        child: const TextField(
-                          decoration: InputDecoration(border: InputBorder.none),
+                        child: TextField(
+                          onChanged: (value) async {
+                            widget.callback!(await Networking().search(value));
+                          },
+                          decoration:
+                              const InputDecoration(border: InputBorder.none),
                         ),
                       )
                     ],
